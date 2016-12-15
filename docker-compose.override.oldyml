@@ -1,0 +1,6 @@
+consul-agent:
+  image: astrally2000/consul:latest
+consul-server:
+  image: astrally2000/consul:latest
+consul-data:
+  image: astrally2000/consul:latest

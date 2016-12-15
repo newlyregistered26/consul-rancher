@@ -4,8 +4,10 @@ consul:
     - consul-server:consul-server
 
 registrator:
-  image: gliderlabs/registrator:v6
+  image: gliderlabs/registrator:v7
   command:
+
+    
     - -resync
     - '300'
     - -ttl
@@ -28,7 +30,7 @@ registrator:
     - consul-agent:consul-agent
 
 consul-agent:
-  image: nextrevision/consul-rancher:latest
+  image: astrally2000/consul:latest
   command: agent
   net: host
   tty: true
@@ -43,7 +45,7 @@ consul-agent:
     - consul-server:consul-server
 
 consul-server:
-  image: nextrevision/consul-rancher:latest
+  image: astrally2000/consul:latest
   command: server
   net: host
   tty: true
@@ -55,7 +57,7 @@ consul-server:
     io.rancher.container.hostname_override: container_name
 
 consul-data:
-  image: nextrevision/consul-rancher:latest
+  image: astrally2000/consul:latest
   hostname: consul-server
   tty: true
   stdin_open: true
